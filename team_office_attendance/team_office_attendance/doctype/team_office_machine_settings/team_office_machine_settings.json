@@ -1,0 +1,90 @@
+{
+  "doctype": "DocType",
+  "name": "Team Office Machine Settings",
+  "module": "Team Office Attendance",
+  "custom": 0,
+  "autoname": "field:machine_name",
+  "title_field": "machine_name",
+  "search_fields": "machine_name,ip_address",
+  "engine": "InnoDB",
+  "istable": 0,
+  "editable_grid": 1,
+  "track_changes": 1,
+  "field_order": [
+    "machine_name",
+    "enabled",
+    "connection_section",
+    "ip_address",
+    "port",
+    "connection_type",
+    "last_sync",
+    "last_sync_status"
+  ],
+  "fields": [
+    {
+      "fieldname": "machine_name",
+      "label": "Machine Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "label": "Enabled",
+      "fieldtype": "Check",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "connection_section",
+      "label": "Connection Details",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "ip_address",
+      "label": "IP Address",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "port",
+      "label": "Port",
+      "fieldtype": "Int",
+      "default": "4370",
+      "reqd": 1
+    },
+    {
+      "fieldname": "connection_type",
+      "label": "Connection Type",
+      "fieldtype": "Select",
+      "options": "\nVendor API\nTCP/IP\nSDK\nOther",
+      "default": "Other",
+      "reqd": 1
+    },
+    {
+      "fieldname": "last_sync",
+      "label": "Last Sync",
+      "fieldtype": "Datetime",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_sync_status",
+      "label": "Last Sync Status",
+      "fieldtype": "Small Text",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

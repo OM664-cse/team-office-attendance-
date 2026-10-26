@@ -1,0 +1,62 @@
+{
+  "doctype": "DocType",
+  "name": "Team Office Employee Mapping",
+  "module": "Team Office Attendance",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "etimeoffice_employee_code",
+    "employee",
+    "api_employee_name",
+    "enabled"
+  ],
+  "fields": [
+    {
+      "fieldname": "etimeoffice_employee_code",
+      "fieldtype": "Data",
+      "label": "eTimeOffice Employee Code",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "label": "Employee",
+      "options": "Employee",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "api_employee_name",
+      "fieldtype": "Data",
+      "label": "API Employee Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1",
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "autoname": "hash"
+}
